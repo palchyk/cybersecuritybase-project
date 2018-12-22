@@ -35,4 +35,9 @@ public class Signup extends AbstractPersistable<Long> {
         this.address = address;
     }
 
+    @Override
+    public String toString() {
+        return name;
+    }
+
 }

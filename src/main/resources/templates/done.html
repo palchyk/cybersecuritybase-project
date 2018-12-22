@@ -4,8 +4,27 @@
         <title>Thank you!</title>
     </head>
     <body>
+        <h1>Amount of people: </h1>
+        <h1 th:text="${amount}">Thank you! You have been signed up to the event!!!</h1>
+        <table>
+            <tr>
+                <th>Participants</th>
+                
+            </tr>
+            <tr th:each="prod : ${people}">
+                <td th:utext="${prod}">Onions</td>
+            </tr>
+        
+        </table>
+            <form th:action="@{/form}" method="GET" enctype="multipart/form-data">         
 
-        <h1>Thank you! You have been signed up to the event!!!</h1>
+
+            
+            <button>Back to signing up</button>
+
+        </form>
+        
+
 
     </body>
 </html>
