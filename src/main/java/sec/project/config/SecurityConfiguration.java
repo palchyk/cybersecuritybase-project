@@ -20,18 +20,13 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-         //no real security at the moment
+       
+         
+        http.csrf().disable();
         http.authorizeRequests()
+//                .antMatchers("/all").hasRole("ADMIN")
+//                .antMatchers("/all/").hasRole("ADMIN")
                 .anyRequest().permitAll();
-//        http
-//                .authorizeRequests()
-//                .antMatchers("/form/").permitAll()
-//                .antMatchers("/done/").authenticated()
-//                //.anyRequest().authenticated()
-//                .and()
-//                .formLogin()
-//                .and()
-//                .httpBasic();
     }
 
     @Autowired

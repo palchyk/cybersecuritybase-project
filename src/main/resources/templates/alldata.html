@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>ADMIN DATA</title>
+    </head>
+    <body>
+        <h1>Amount of signups </h1>
+        <h1 th:text="${amount}">Welcome!</h1>
+        <table>
+            <tr>
+                <th>Participants(can't be modified)</th>
+            </tr>
+            <tr th:each="prod : ${people}">
+                <td th:utext="${prod}">Onions</td>
+            </tr>
+
+        </table>
+        <table>
+            <tr>
+                <th>Database (not the same as the one above)</th>
+
+            </tr>
+            <tr th:each="prod : ${base}">
+                <td th:utext="${prod}">Onions</td>
+            </tr>
+
+        </table>
+        <h3>Add items to database</h3>
+
+        <form action="#" th:action="@{/all}" method="POST">
+            <p><label for="name">Name</label>: <input type="text" name="name" id="name"/></p>
+            <p><label for="address">Address</label>: <input type="text" name="address" id="address"/></p>
+            <p><input type="submit" value="Submit" /></p>
+        </form>
+        <h3>Delete items with specific name</h3>
+        <form th:action="@{/delall}" method="POST" enctype="multipart/form-data">         
+            <p><label for="name">Name</label>: <input type="text" name="name" id="name"/></p>
+
+            <p><input type="submit" value="Submit" /></p>
+
+        </form>
+        <form th:action="@{/form}" method="GET" enctype="multipart/form-data">         
+
+
+
+            <button>Back to signing up</button>
+
+        </form>
+
+
+
+    </body>
+</html>

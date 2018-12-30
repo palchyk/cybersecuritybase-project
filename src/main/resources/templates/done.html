@@ -5,25 +5,32 @@
     </head>
     <body>
         <h1>Amount of people: </h1>
-        <h1 th:text="${amount}">Thank you! You have been signed up to the event!!!</h1>
+        <h1 th:text="${amount}">Welcome!</h1>
         <table>
             <tr>
                 <th>Participants</th>
-                
+
             </tr>
             <tr th:each="prod : ${people}">
-                <td th:utext="${prod}">Onions</td>
+                <td th:utext="${prod.name}">Onions</td>
             </tr>
-        
+
         </table>
-            <form th:action="@{/form}" method="GET" enctype="multipart/form-data">         
+        <form th:action="@{/form}" method="GET" enctype="multipart/form-data">         
 
 
-            
+
             <button>Back to signing up</button>
 
         </form>
-        
+        <form th:action="@{/all}" method="GET" enctype="multipart/form-data">         
+
+
+
+            <button>All Data</button>
+
+        </form>
+
 
 
     </body>
